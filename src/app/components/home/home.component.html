@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">PelisApp</h1>
+        <p class="lead">Esta es una aplicación de películas.</p>
+    </div>
+</div>
+
+<app-loading *ngIf="loading" class="animated fadeIn fast"></app-loading>
+
+
+<div class="container animated fadeIn fast" *ngIf="!loading">
+
+    <h1 class="card-title mt-5">En cartelera</h1>
+    <hr class="mb-5">
+
+    <div class="card-columns">
+        <app-tarjeta [component]='ruta' [pelicula]='cartelera' *ngFor="let cartelera of carteleras; let i = index"></app-tarjeta>
+    </div>
+
+
+
+
+    <h1 class="card-title mt-5">Populares</h1>
+    <hr class="mb-5">
+
+    <div class="card-columns">
+        <app-tarjeta [component]='ruta' [pelicula]='item' *ngFor="let item of peliculas; let i = index"></app-tarjeta>
+    </div>
+
+</div>

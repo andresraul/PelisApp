@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <input class="form-control border-success" type="text" placeholder="Buscar película" (keyup)="buscar()" name="texto" [(ngModel)]="entrada">
+</div>
+
+<app-loading *ngIf="loading" class="animated fadeIn fast">
+</app-loading>
+
+<div class="container mt-5 animated fadeIn fast" *ngIf="!loading && entrada">
+
+    <div class="card-columns">
+        <app-tarjeta [component]=' ruta ' [pelicula]='item ' *ngFor="let item of peliculas; let i = index"></app-tarjeta>
+    </div>
+
+</div>

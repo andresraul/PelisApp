@@ -1,0 +1,7 @@
+<div class="card click_tarjeta" (click)="irPelicula( pelicula.id, component )">
+    <img [src]="pelicula | poster" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ pelicula.title }}</h5>
+        <p class="card-text">{{ pelicula.overview | slice:0:250 }}...</p>
+    </div>
+</div>
